@@ -17,7 +17,7 @@ function createWindow() {
 
     // and load the index.html of the app.
     //mainWindow.loadURL('http://localhost:3000');
-    const startUrl = process.env.ELECTRON_START_URL || url.format({
+    const startUrl = process.env.ELECTRON_DEV ? "http://localhost:3000/" : url.format({
             pathname: path.join(__dirname, '/../build/index.html'),
             protocol: 'file:',
             slashes: true
