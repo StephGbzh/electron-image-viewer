@@ -17,13 +17,15 @@ But
 => back to previous way of doing Electron + React
 
 TODO
-Double click =>  full screen <-> pas full screen
-clic droit => menu
-rotate
-infos de l'image
-rename
+- Double click =>  full screen <-> pas full screen
+- clic droit => menu
+- rotate
+- infos de l'image
+- rename
+- esc to close
 
 Usage:
+
 npm start "echo /path/to/image.jpg"
 
 
