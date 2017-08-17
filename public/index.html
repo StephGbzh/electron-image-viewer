@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="theme-color" content="#000000">
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -19,7 +19,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Image Viewer (Electron + React)</title>
+    <script>
+      // https://stackoverflow.com/questions/3354239/hiding-the-mouse-cursor-when-idle-using-javascript
+      var mouseTimer = null, cursorVisible = true;
+
+      function disappearCursor() {
+          mouseTimer = null;
+          document.body.style.cursor = "none";
+          cursorVisible = false;
+      }
+
+      document.onmousemove = function() {
+          if (mouseTimer) {
+              window.clearTimeout(mouseTimer);
+          }
+          if (!cursorVisible) {
+              document.body.style.cursor = "default";
+              cursorVisible = true;
+          }
+          mouseTimer = window.setTimeout(disappearCursor, 1000);
+      };
+    </script>
   </head>
   <body>
     <noscript>

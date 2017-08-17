@@ -13,7 +13,18 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({
+        fullscreen: true,
+        frame: false,
+        width: 1920,
+        height: 1080,
+        x:1680,
+        y:0,
+        // allow the access to local files https://github.com/SimulatedGREG/electron-vue/issues/165
+        webPreferences: {
+            webSecurity: false
+        }
+    });
 
     // and load the index.html of the app.
     //mainWindow.loadURL('http://localhost:3000');
@@ -23,6 +34,11 @@ function createWindow() {
             slashes: true
         });
     mainWindow.loadURL(startUrl);
+
+    //{"remain":["{\"remain\":[\"/chemin/vers/image\"],\"cooked\":[\"start\",\"/chemin/vers/image\"],\"original\":[\"start\",\"/chemin/vers/image\"]}"],"cooked":["run","electron-start","{\"remain\":[\"/chemin/vers/image\"],\"cooked\":[\"start\",\"/chemin/vers/image\"],\"original\":[\"start\",\"/chemin/vers/image\"]}"],"original":["run","electron-start","{\"remain\":[\"/chemin/vers/image\"],\"cooked\":[\"start\",\"/chemin/vers/image\"],\"original\":[\"start\",\"/chemin/vers/image\"]}"]}
+    //dd = process.env.npm_config_argv.replace(/\{"remain":\["\{\\"remain\\":\[\\"([^\"]+)\"/, "$1")
+    //console.log("ESSAI", process.env.npm_config_argv)
+    //console.log("ESSAI2", dd[1])
     
     // Open the DevTools.
     mainWindow.webContents.openDevTools();

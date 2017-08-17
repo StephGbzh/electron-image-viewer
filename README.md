@@ -1,3 +1,29 @@
+Based on https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c
+and the matching github https://github.com/csepulv/electron-with-create-react-app
++ comment on the same blog to use Concurrently + Wait-on
++ comment on the same blog to add BROWSER=none to avoid launching the page in electron AND in the browser
+
+Try with https://github.com/chentsulin/electron-react-boilerplate
+but too many things at once
+=> back to previous way of doing Electron + React
+
+Try with https://github.com/b52/electron-es6-react which uses babel because
+- it launches quicker
+- no complicated things like concurrently and wait-on
+- arguments can be passed directly to electron since it is the command in the "start" script
+But
+- cannot import css
+- does not recognize import App either
+=> back to previous way of doing Electron + React
+
+TODO
+Double click =>  full screen <-> pas full screen
+clic droit => menu
+rotate
+infos de l'image
+rename
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
