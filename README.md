@@ -23,6 +23,9 @@ rotate
 infos de l'image
 rename
 
+Usage:
+npm start "echo /path/to/image.jpg"
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
